@@ -3,7 +3,7 @@
 */
 
 //chiedo la parola all'utente
-let parola = prompt('Inserisci una parola');
+let parola = prompt('Inserisci una parola').replace(/\s/g, "");
 
 //definisco le due arrray da confrontare per sapere se la parola è palindroma
 let parola1 = [];

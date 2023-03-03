@@ -3,7 +3,8 @@
 */
 
 //chiedo la parola all'utente
-let parola = prompt('Inserisci una parola').replace(/\s/g, "");
+let parolaUser = prompt('Inserisci una parola');
+let parola = parolaUser.replace(/\s/g, "").toUpperCase();
 
 //definisco le due arrray da confrontare per sapere se la parola è palindroma
 let parola1 = [];
@@ -23,10 +24,10 @@ const elementoDom = document.querySelector('#container');
 
 //SE le due stringhe sono uguali
 if(parolaOrdinata == parolaGirata) {
-    elementoDom.innerHTML = `La parola inserita è: '${parola}' ed è una parola palindroma!`;
+    elementoDom.innerHTML = `La parola inserita è: '${parolaUser}' ed è una parola palindroma!`;
     console.log('La parola è palindroma');
 } else {
-    elementoDom.innerHTML = `La parola inserita è: '${parola}' e NON è una parola palindroma!`;
+    elementoDom.innerHTML = `La parola inserita è: '${parolaUser}' e NON è una parola palindroma!`;
     console.log('La parola NON è palindroma');
 }
 
@@ -57,3 +58,22 @@ function girata(parola2) {
 }
 
 
+/*
+const parola = prompt('Inserisci una parola');
+
+const parolaInvertita = giraParola(parola);
+
+if (parola == parolaInvertita) {
+    alert('Palindroma');
+} else {
+    alert('Non palindroma');
+}
+
+function giraParola(parolaDaGirare) {
+    let parolaGirata = "";
+    for (let i = (parolaDaGirare.length - 1); i >= 0; i--) {
+        parolaGirata += parolaDaGirare;
+    }
+    return parolaGirata;
+}
+*/

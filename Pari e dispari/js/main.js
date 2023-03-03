@@ -7,8 +7,12 @@ const scelta = prompt('inserisci se vuoi puntare su pari o su dispari');
 console.log(scelta);
 
 //chiedo all'utente di inserire un numero da 1 a 5
-const numeroUtente = parseInt(prompt('Inserisci un numero da 1 a 5'));
+let numeroUtente;
+do {
+    numeroUtente = parseInt(prompt('Inserisci un numero compreso tra 1 e 5'));
+} while (isNaN (numeroUtente) || numeroUtente < 1 || numeroUtente > 5);
 console.log(numeroUtente);
+
 
 const numeroComputer = generaNumeroCasuale(1, 5);
 console.log(numeroComputer);
@@ -22,7 +26,7 @@ let risultato = pariODispari(somma);
 
 const elementoDom = document.querySelector('#risultato');
 
-if (scelta == 'pari' && risultato == 'pari') {
+if (scelta == risultato) {
     elementoDom.innerHTML = `Hai scelto: ${scelta} <br /> 
     Il tuo numero è  ${numeroUtente} <br />
     Il numero del computer è ${numeroComputer} <br />
